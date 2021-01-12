@@ -7,8 +7,8 @@
 #define MANTISSA_BITS 8UL
 #define MYFLOAT_BITS 16UL
 #define MYFLOAT_BYTES 2
-#define BIAS 63UL
-#define INIT 0
+#define BIAS 63
+#define INIT 0U
 #define IMPLIED_BIT 256
 
 /*  */
@@ -17,9 +17,9 @@
 typedef struct my_float MyFloat;
 
 struct __attribute__((packed)) my_float {
-  unsigned int mantissa:MANTISSA_BITS;
-  unsigned int exponent:EXPONENT_BITS;
-  unsigned int sign:SIGN_BITS;
+  short unsigned  mantissa:MANTISSA_BITS;
+  short unsigned  exponent:EXPONENT_BITS;
+  short unsigned  sign:SIGN_BITS;
 };
 MyFloat myfloat_zero();
 
@@ -29,7 +29,7 @@ int myfloat_negative(MyFloat);
 
 int myfloat_exponent(MyFloat);
 
-int myfloat_mantissa(MyFloat);
+unsigned myfloat_mantissa(MyFloat);
 
 void myfloat_set_negative(MyFloat *, int);
 

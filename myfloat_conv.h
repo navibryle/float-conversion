@@ -32,5 +32,6 @@ void to_dec(const char * aString,double * aDouble_pointer);
 unsigned get_mantissa(double aDouble);
 int get_exponent(double aDouble);
 unsigned get_sign(double aDouble);
+void myfloat_to_str_cont(MyFloat aFloat,char * string_rep);
 #endif
 /*  */
